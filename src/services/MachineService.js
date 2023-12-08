@@ -17,3 +17,11 @@ export async function saveMachine(machinedata){
         console.log(error);
     }
 }
+export async function deleteMachine(machno){
+    try{
+        const response = await axios.delete(`http://127.0.0.1:4900/machine/${machno}`)
+        return response.data;
+    }catch(error){
+        console.log(error)
+    }
+}

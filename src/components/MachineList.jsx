@@ -1,5 +1,5 @@
 import { Button, Container,Table } from "react-bootstrap";
-import { fetchMachines } from "../services/MachineService"
+import { deleteMachine, fetchMachines } from "../services/MachineService"
 import { useEffect,useState } from "react";
 
 export function MachineList(){
@@ -18,6 +18,15 @@ export function MachineList(){
     useEffect(()=>{
         populateMachineState();
     },[]);
+
+    const handleDeleteClick=async(machno)=>{
+        try{
+            await deleteMachine(machno);
+            populateMachineState();
+        } catch(error){
+            console.log(error);
+        }
+    }
 
     return(
         
@@ -38,10 +47,12 @@ export function MachineList(){
                             return (
                                 <tr>
                                     <td>{m.machno}</td>
-                                    <td>{m.machdate}</td>
+                                    <td>{m.machdate = new Date(m.machdate).toUTCString()}</td>
                                     <td>{m.emergenyrepair}</td>
                                     <td>{m.working}</td>
-                                    <td><Button variant="danger">Delete</Button> &#160;
+                                    <td><Button variant="danger" onClick={()=>{
+                                        handleDeleteClick(m.machno);
+                                    }}>Delete</Button> &#160;
                                         <Button>Update</Button>
                                     </td>
                                 </tr>
