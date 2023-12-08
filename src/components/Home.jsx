@@ -1,5 +1,4 @@
 import { Container } from "react-bootstrap";
-import { NavigationBar } from "./NavigationBar";
 import Carousel from 'react-bootstrap/Carousel';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
@@ -7,12 +6,11 @@ import React from 'react';
 import pic1 from '../images/1.jpg'
 import pic2 from '../images/3.jpg'
 import pic3 from '../images/4.jpg'
-import { Footer } from "./Footer";
+
 
 export function Home() {
     return (
         <>
-            <NavigationBar />
             <Container>
             <Carousel className="mt-3">
                 <Carousel.Item interval={1000}>
@@ -50,13 +48,6 @@ export function Home() {
                     <Button href="/dashboard">Dashboard</Button>
                 </Card.Body>
             </Card>
-
-            <Footer/>
         </>
     );
 }
-
-// import pic from ".mypic.jpg";
-// function App(){
-// return <img src={pic} />
-// }

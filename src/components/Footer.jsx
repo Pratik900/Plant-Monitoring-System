@@ -3,7 +3,7 @@ import Navbar from 'react-bootstrap/Navbar';
 
 export function Footer(){
     return(
-    <Navbar expand="lg" className='' bg="dark" data-bs-theme="dark">
+    <Navbar stickey="bottom" expand="lg" className='' bg="dark" data-bs-theme="dark">
       <Container>
         <Navbar.Brand href="#">Footer</Navbar.Brand>
       </Container>
