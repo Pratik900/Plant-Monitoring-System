@@ -1,5 +1,6 @@
 import { Container } from "react-bootstrap";
 import Carousel from 'react-bootstrap/Carousel';
+import { useNavigate } from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import React from 'react';
@@ -9,6 +10,10 @@ import pic3 from '../images/4.jpg'
 
 
 export function Home() {
+    const navigate = useNavigate();
+    const handleDash=()=>{
+        navigate('/dashboard');
+    }
     return (
         <>
             <Container>
@@ -45,7 +50,9 @@ export function Home() {
                     <Card.Text>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel harum tenetur corrupti sed. Sapiente maxime repudiandae ipsam est inventore <br/> accusantium voluptatem error minus iusto dolores aliquid eveniet, ipsa porro temporibus fuga similique rerum magni sunt possimus earum iure ut? Autem,<br/> amet dolorum incidunt hic sunt voluptates dignissimos corrupti eius modi?
                     </Card.Text>
-                    <Button href="/dashboard">Dashboard</Button>
+                    <Button onClick={()=>{
+                        handleDash();
+                    }}>Dashboard</Button>
                 </Card.Body>
             </Card>
         </>

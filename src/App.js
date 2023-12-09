@@ -7,6 +7,7 @@ import { MachineLog } from './components/MachineLog';
 import { Home } from './components/Home';
 import { NavigationBar } from './components/NavigationBar';
 import { Footer } from "./components/Footer";
+import { MachineUpadte } from './components/MachineUpdate';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard/>}></Route>
         <Route path="/machine-list" element={<MachineList/>}></Route>
         <Route path="/machine-log" element={<MachineLog/>}></Route>
+        <Route path="/edit/:machno" element={<MachineUpadte/>}></Route>
       </Routes>
       <Footer />
     </BrowserRouter>  
