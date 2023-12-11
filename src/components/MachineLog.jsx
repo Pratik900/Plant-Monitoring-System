@@ -5,6 +5,8 @@ import "../Style/MachineLog.css";
 import { useState } from "react";
 import { saveMachine } from "../services/MachineService";
 import { Header } from "./Header";
+import { NavigationBar } from "./NavigationBar";
+import { Footer } from "./Footer";
 
 export function MachineLog() {
   const [formData, setFormData] = useState({
@@ -32,9 +34,9 @@ export function MachineLog() {
     }
   };
   return (
-
-
-      <Container>
+    <>
+        <NavigationBar/>
+        <Container>
           <Header text="Insert Machine Log"></Header>
           <div className="Center-Page">
             <Form onSubmit={handleSubmit}>
@@ -92,6 +94,9 @@ export function MachineLog() {
             </Form>
           </div>
       </Container>
+          <Footer/>
+    </>
+      
 
   );
 }

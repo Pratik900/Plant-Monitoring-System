@@ -1,0 +1,8 @@
+.Center-page{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(100, 237, 235);
+    width: 1000px;
+    height: 500px;
+    margin:80px auto;
+}

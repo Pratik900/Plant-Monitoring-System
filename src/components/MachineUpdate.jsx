@@ -1,14 +1,13 @@
 import { Alert, Container } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import "../Style/MachineLog.css";
 import { useEffect, useState } from "react";
 import { Header } from "./Header";
 import { useParams } from "react-router-dom";
 import { FetchMachineByMachno, updateMachine } from "../services/MachineService";
 import { AlertComp } from "./AlertComp";
 import moment from "moment/moment";
-
+import { NavigationBar } from "./NavigationBar";
 export function MachineUpadte() {
   const params = useParams()
   const [formData, setFormData] = useState({
@@ -61,7 +60,9 @@ export function MachineUpadte() {
 
 
   return (
+
     <div className="Center-Page">
+      <NavigationBar/>
       <Header text="Udate Machine Log"></Header>
       <Container>
         {FormData?<Form onSubmit={handleSubmit}>

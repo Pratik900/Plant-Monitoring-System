@@ -57,3 +57,20 @@ export async function FetchMachineCountByYes(count){
         console.log(error)
     }   
 }
+
+export async function FetchMachineByno(countno){
+    try{
+        const response = await axios.get(`http://127.0.0.1:4900/emergencycountno/${countno}`)
+        return response.data;
+    }catch(error){
+        console.log(error)
+    }   
+}
+export async function FetchMachineByYes(countyes){
+    try{
+        const response = await axios.get(`http://127.0.0.1:4900/emergencycountyes/${countyes}`)
+        return response.data;
+    }catch(error){
+        console.log(error)
+    }   
+}
