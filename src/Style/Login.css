@@ -1,8 +1,28 @@
-.Center-page{
-    display: flex;
-    justify-content: center;
-    background-color: rgb(100, 237, 235);
-    width: 1000px;
-    height: 500px;
-    margin:80px auto;
+#cc{
+    background-color: #dddddd ;
+    height: 45vh;
+    width:40vh;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(22, 23, 23, 0.884);
+    border-radius: 5px;  
+}
+#heads{
+    color: black;
+    padding-left: 36%;
+    padding-top: 5%;
+    font-size: x-large;
+}
+#lab{
+    border-color: black;
+}
+.body{
+    color: rgb(235, 231, 231);
+}
+
+.App-header{
+    background-image: linear-gradient(to top right,#092635,#9EC8B9);
+}
+
+#labeln{
+    color:black;
+    font-size: medium;
 }

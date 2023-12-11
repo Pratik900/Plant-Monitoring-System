@@ -35,7 +35,8 @@ export function MachineLog() {
   };
   return (
     <>
-        <NavigationBar/>
+    <div id="cards">
+    <NavigationBar/>
         <Container>
           <Header text="Insert Machine Log"></Header>
           <div className="Center-Page">
@@ -83,18 +84,17 @@ export function MachineLog() {
                   onKeyUp={handleChange}
                 />
               </Form.Group>
-              <Button variant="primary" type="submit">
-                Submit
+              <Button variant="dark" type="submit">
+                Append
               </Button>
               <Form.Group className="mb-3">
-                {isSubmitted ? (
-                  <Alert variant="success">Details Inserted</Alert>
-                ) : null}
+                {isSubmitted ? (<Alert variant="success">Details Inserted</Alert>) : null}
               </Form.Group>
             </Form>
           </div>
       </Container>
           <Footer/>
+    </div>
     </>
       
 

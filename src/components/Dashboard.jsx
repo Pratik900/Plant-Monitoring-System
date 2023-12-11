@@ -7,22 +7,22 @@ import Col from 'react-bootstrap/Col';
 import { LineGraph } from './LineGraph';
 import { NavigationBar } from './NavigationBar';
 import { Footer } from './Footer';
-
+import "../Style/Home.css"
 
 export function Dashboard() {
   return (
     <>
+      <div id="cards">
         <NavigationBar/>
-      <div>
         <Container>
           <LineGraph/>
-        <Row className='mt-5'>
+        <Row className='mt-3 mb-3'>
           <Col><WorkingGraph/></Col>
           <Col><EmergencyGraph/></Col>
         </Row>
         </Container>
-      </div>
         <Footer/>
+      </div>
     </>
   );
 }

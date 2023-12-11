@@ -19,7 +19,6 @@ function App() {
         <Route path="/machine-log" element={<MachineLog/>}></Route>
         <Route path="/edit/:machno" element={<MachineUpadte/>}></Route>
       </Routes>
-
     </BrowserRouter>  
   );
 }

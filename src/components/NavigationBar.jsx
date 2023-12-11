@@ -2,7 +2,8 @@ import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { logout } from "../Utils/TokenUtils";
-import pic3 from '../images/logo.png'
+import "../Style/NavigationBar.css"
+import pic3 from '../images/white.png'
 
 export function NavigationBar() {
     const navigate=useNavigate();
@@ -12,7 +13,7 @@ export function NavigationBar() {
     }
 
     return (
-        <Navbar sticky="top" expand="lg" bg="info" data-bs-theme="light">
+        <Navbar sticky="top" expand="lg"  data-bs-theme="dark" className="navs">
             <Container>
                 <Navbar.Brand href="/Home"><img alt="c1" src={pic3}/></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -29,7 +30,7 @@ export function NavigationBar() {
                         </LinkContainer>
                     </Nav>
                    
-                <Button variant="outline-dark" onClick={handleLogout}>Logout</Button>
+                <Button variant="outline-light" onClick={handleLogout}>Logout</Button>
                 </Navbar.Collapse>
             </Container>
         </Navbar>

@@ -6,25 +6,19 @@ import { fetchMachines } from '../services/MachineService';
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 export function LineGraph(){
-    const [, setMachine] = useState([]);
 
 async function populateMachineState() {
     try {
         const data = await fetchMachines();
-        setMachine(data.Details);
-    
         const newDataPoints = data.Details.map(item => ({
             x: (moment(item.machdate, 'YYYY-MM-DD').toDate()),
             y: item.machno
         }));
     
-        console.log(newDataPoints);
-    
         setGenderVisuals(prevVisuals => ({
             ...prevVisuals,
             data: [{
                 type: "splineArea",
-                xValueFormatString: "YYYY",
                 yValueFormatString: "#,## M-ID",
                 dataPoints: newDataPoints
             }]
@@ -35,7 +29,6 @@ async function populateMachineState() {
 }
 
 const [genervisuals, setGenderVisuals] = useState({
-    animationEnabled: true,
     title: {
         text: "Machine Maintenance"
     },
@@ -45,8 +38,7 @@ const [genervisuals, setGenderVisuals] = useState({
     },
     data: [{
         type: "splineArea",
-        xValueFormatString: "YYYY",  // This is fine since x is a date object
-        yValueFormatString: "#,## M-ID",
+        yValueFormatString: " M-ID",
         dataPoints: []
     }]
 });

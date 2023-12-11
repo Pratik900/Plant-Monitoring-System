@@ -15,7 +15,6 @@ export function Login() {
         e.preventDefault();
         try {
             const result = await login(formData);
-             console.log(result);
             localStorage.setItem("token", result.token);
 
             if(result.token!=null)
@@ -30,38 +29,34 @@ export function Login() {
         }
     }
     return (
-        <Container className="d-flex justify-content-center mt-5">
-            <Row>
-                <Col>
-                    <Form onSubmit={handleSubmit}>
-                        <Form.Group className="mb-4" controlId="formBasicEmail">
-                            <Form.Label>User Name</Form.Label>
-                            <Form.Control type="text" placeholder="Enter Phone" name="phone" onChange={handleChange} />
-                        </Form.Group>
+        <div className="App-header">
+                <Container className="d-flex justify-content-center mt-5" id="cc">
+                <Row>
+                    <Col>
+                        <Form onSubmit={handleSubmit}>
+                            <Form.Label id="heads">Login</Form.Label>
+                            <Form.Group className="mb-2" controlId="formBasicEmail">
+                                <Form.Label id="labeln">User Name</Form.Label>
+                                <Form.Control id="lab" type="text" placeholder="Enter Username" name="phone" onChange={handleChange} />
+                            </Form.Group>
 
-                        <Form.Group className="mb-4" controlId="formBasicPassword">
-                            <Form.Label>Password</Form.Label>
-                            <Form.Control type="password" placeholder="Password" name="password" onChange={handleChange} />
-                        </Form.Group>
+                            <Form.Group className="mb-4" controlId="formBasicPassword">
+                                <Form.Label id="labeln">Password</Form.Label>
+                                <Form.Control id="lab" type="password" placeholder="Password" name="password" onChange={handleChange} />
+                            </Form.Group>
 
-                        <div className="text-center">
-                            <Button
-                                variant="primary"
-                                type="submit"
-                                className="shadow-sm" // Add shadow
-                                style={{ transition: 'all 0.2s' }} // Smooth transition
-                                onMouseOver={(e) => e.target.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.1)'} // Hover effect
-                                onMouseOut={(e) => e.target.style.boxShadow = 'none'} // Remove shadow on hover out
-                            >
-                                Login
-                            </Button>
-                        </div>
-                    </Form>
+                            <div className="text-center">
+                                <Button variant="dark" type="submit">
+                                    Login
+                                </Button>
+                            </div>
+                        </Form>
 
-                    {loginError ? <Alert variant="danger" className="mt-3">Invalid phone or password</Alert> : null}
-                </Col>
-            </Row>
-        </Container>
+                        {loginError ? <Alert variant="danger"id="labeln" className="mt-5 ">Invalid Username or password</Alert> : null}
+                    </Col>
+                </Row>
+            </Container>
+        </div>
         
     )
 }

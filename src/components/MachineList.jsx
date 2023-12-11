@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import moment from "moment/moment";
 import { NavigationBar } from './NavigationBar';
 import { Footer } from "./Footer";
+import "../Style/MachineLog.css"
 
 
 export function MachineList(){
@@ -16,7 +17,7 @@ export function MachineList(){
 
     async function populateMachineState(){
         try{
-            const data=await fetchMachines()
+            const data=await fetchMachines() 
             setMachine(data.Details);
         } catch(error){
             console.log(error);
@@ -29,7 +30,7 @@ export function MachineList(){
 
     const handleDeleteClick=async(machno)=>{
         try{
-            await deleteMachine(machno);
+            await deleteMachine(machno); 
             populateMachineState();
         } catch(error){
             console.log(error);
@@ -39,46 +40,49 @@ export function MachineList(){
     return(
         
         <>
+        <div id="cards">
             <NavigationBar/>
-            <div>
-            <Container>
+            <Container >
                     <Header text="Machine Maintanance Data"></Header>
-                    {machine.length!==0?<Table className="mt-4">
+                    <div >
+                    {machine.length!==0?<Table className="mt-4" >
                     
-                        <thead>
-                            <tr>
-                                <th>M-ID</th>
-                                <th>Maintanance Date</th>
-                                <th>Emergency repair</th>
-                                <th>Working</th>
-                                <th>Options</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {
-                                machine.map((m)=>{
-                                    return (
-                                        <tr>
-                                            <td>{m.machno}</td>
-                                            <td>{m.machdate = moment(m.machdate).format('YYYY-MM-DD')}</td>
-                                            <td>{m.emergenyrepair}</td>
-                                            <td>{m.working}</td>
-                                            <td><Button variant="danger" onClick={()=>{
-                                                handleDeleteClick(m.machno);
-                                            }}>Delete</Button> &#160;
-                                                <Button onClick={()=>{
-                                                    navigate(`/edit/${m.machno}`);
-                                                }}>Update</Button>
-                                            </td>
-                                        </tr>
-                                    )
-                                })
-                            }
-                        </tbody>
-                    </Table>:<AlertComp text="Oh snap! Data not found..!"></AlertComp>}
+                    <thead>
+                        <tr>
+                            <th>M-ID</th>
+                            <th>Maintanance Date</th>
+                            <th>Emergency repair</th>
+                            <th>Working</th>
+                            <th>Options</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            machine.map((m)=>{
+                                return (
+                                    <tr>
+                                        <td>{m.machno}</td>
+                                        <td>{m.machdate = moment(m.machdate).format('YYYY-MM-DD')}</td>
+                                        <td>{m.emergenyrepair}</td>
+                                        <td>{m.working}</td>
+                                        <td><Button variant="danger" onClick={()=>{
+                                            handleDeleteClick(m.machno);
+                                        }}>Delete</Button> &#160;
+                                            <Button onClick={()=>{
+                                                navigate(`/edit/${m.machno}`);
+                                            }}>Update</Button>
+                                        </td>
+                                    </tr>
+                                )
+                            })
+                        }
+                    </tbody>
+                </Table>:<AlertComp text="Oh snap! Data not found..!"></AlertComp>}
+                    </div>
+                    
                 </Container>
-            </div>
             <Footer></Footer>
+            </div>
         </>
 
     );

@@ -3,3 +3,10 @@
     height: 600px;
     margin: 40px auto;
 }
+#cards{
+    background-color: #9EC8B9;
+}
+#toborder{
+    border-radius: 10%;
+    background-color: red;
+}

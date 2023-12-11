@@ -8,6 +8,9 @@ import { FetchMachineByMachno, updateMachine } from "../services/MachineService"
 import { AlertComp } from "./AlertComp";
 import moment from "moment/moment";
 import { NavigationBar } from "./NavigationBar";
+import { Footer } from "./Footer";
+import "../Style/MachineLog.css"
+
 export function MachineUpadte() {
   const params = useParams()
   const [formData, setFormData] = useState({
@@ -60,10 +63,11 @@ export function MachineUpadte() {
 
 
   return (
-
-    <div className="Center-Page">
+    <>
+      <div id="cards">
       <NavigationBar/>
-      <Header text="Udate Machine Log"></Header>
+      <Header text="Update Machine Log"></Header>
+    <div className="Center-Page" >
       <Container>
         {FormData?<Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3">
@@ -109,7 +113,7 @@ export function MachineUpadte() {
               onChange={handleChange}
             />
           </Form.Group>
-          <Button variant="primary" type="submit">
+          <Button variant="dark" type="submit">
             Update
           </Button>
           <Form.Group className="mb-3">
@@ -118,9 +122,14 @@ export function MachineUpadte() {
             ) : null}
           </Form.Group>
         </Form>:<AlertComp text="No Data Found..!"></AlertComp>}
-        
       </Container>
     </div>
+    <Footer/>
+      </div>
+      
+    </>
+
+    
   );
 }
  

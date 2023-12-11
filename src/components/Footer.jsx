@@ -1,10 +1,11 @@
 import { Navbar,Nav, Container } from 'react-bootstrap';
+import "../Style/NavigationBar.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 export function Footer(){
     return(
-      <Navbar  expand="lg" className="bg-info" variant="light">
+      <Navbar  expand="lg" data-bs-theme="dark" className="navs">
       <Container className="d-flex align-items-center justify-content-between">
         <Navbar.Brand href="#" className="text-center">© 2023 Copyright: Machinemaintanace.com</Navbar.Brand>
 
