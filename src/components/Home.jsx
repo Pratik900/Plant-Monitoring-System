@@ -62,7 +62,7 @@ export function Home() {
                     Unveiling the Future of Industrial Equipment Management
                     Welcome to a new era in industrial equipment management with our Advanced Machine Maintenance System.<br/> Our solution is more than just a tool; it's a transformative experience that reshapes the way you approach equipment maintenance, ensuring unparalleled performance and efficiency.
                     Our commitment to excellence ensures top-notch services.
-                    Expertise: Backed by years of experience, we deliver [unique expertise or perspective].
+                    Expertise: Backed by years of experience, we deliver unique expertise or perspective.
                     <br/>Customer Satisfaction: We prioritize your satisfaction, striving to exceed expectations.
                     </Card.Text>
                 </Card.Body>

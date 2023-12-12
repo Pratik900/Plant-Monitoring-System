@@ -37,12 +37,12 @@ export function Login() {
                             <Form.Label id="heads">Login</Form.Label>
                             <Form.Group className="mb-2" controlId="formBasicEmail">
                                 <Form.Label id="labeln">User Name</Form.Label>
-                                <Form.Control id="lab" type="text" placeholder="Enter Username" name="phone" onChange={handleChange} />
+                                <Form.Control id="lab" required type="text" placeholder="Enter Username" name="phone" onChange={handleChange} />
                             </Form.Group>
 
                             <Form.Group className="mb-4" controlId="formBasicPassword">
                                 <Form.Label id="labeln">Password</Form.Label>
-                                <Form.Control id="lab" type="password" placeholder="Password" name="password" onChange={handleChange} />
+                                <Form.Control id="lab" required type="password" placeholder="Password" name="password" onChange={handleChange} />
                             </Form.Group>
 
                             <div className="text-center">

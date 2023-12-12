@@ -65,10 +65,10 @@ export function MachineList(){
                                         <td>{m.machdate = moment(m.machdate).format('YYYY-MM-DD')}</td>
                                         <td>{m.emergenyrepair}</td>
                                         <td>{m.working}</td>
-                                        <td><Button variant="danger" onClick={()=>{
+                                        <td><Button variant="danger" id="btn" onClick={()=>{
                                             handleDeleteClick(m.machno);
                                         }}>Delete</Button> &#160;
-                                            <Button onClick={()=>{
+                                            <Button id="btn" onClick={()=>{
                                                 navigate(`/edit/${m.machno}`);
                                             }}>Update</Button>
                                         </td>

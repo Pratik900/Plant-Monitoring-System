@@ -6,8 +6,8 @@ import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg
 export function Footer(){
     return(
       <Navbar  expand="lg" data-bs-theme="dark" className="navs">
-      <Container className="d-flex align-items-center justify-content-between">
-        <Navbar.Brand href="#" className="text-center">© 2023 Copyright: Machinemaintanace.com</Navbar.Brand>
+      <Container >
+        <Navbar.Brand href="#" id="footstyle" className="text-center">© 2023 Copyright: Machinemaintenace.com</Navbar.Brand>
 
         {/* Social Media Icons */}
         <div className="d-flex">

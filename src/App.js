@@ -7,6 +7,7 @@ import { MachineLog } from './components/MachineLog';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Home } from './components/Home';
 import { Login } from './components/Login';
+import { About } from './components/About';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard/>}></Route>
         <Route path="/machine-list" element={<MachineList/>}></Route>
         <Route path="/machine-log" element={<MachineLog/>}></Route>
+        <Route path="/about" element={<About/>}></Route>
         <Route path="/edit/:machno" element={<MachineUpadte/>}></Route>
       </Routes>
     </BrowserRouter>  

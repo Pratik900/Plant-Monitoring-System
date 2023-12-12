@@ -29,6 +29,9 @@ export function NavigationBar() {
                             <Nav.Link>Machine Logs</Nav.Link>
                         </LinkContainer>
                     </Nav>
+                    <LinkContainer className="me-4" id="abt" to="/about">
+                            <Nav.Link>About</Nav.Link>
+                        </LinkContainer>
                    
                 <Button variant="outline-light" onClick={handleLogout}>Logout</Button>
                 </Navbar.Collapse>

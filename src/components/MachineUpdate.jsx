@@ -3,7 +3,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { useEffect, useState } from "react";
 import { Header } from "./Header";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { FetchMachineByMachno, updateMachine } from "../services/MachineService";
 import { AlertComp } from "./AlertComp";
 import moment from "moment/moment";
@@ -12,6 +12,9 @@ import { Footer } from "./Footer";
 import "../Style/MachineLog.css"
 
 export function MachineUpadte() {
+
+  const navigate = useNavigate()
+
   const params = useParams()
   const [formData, setFormData] = useState({
     machno: "",
@@ -31,8 +34,12 @@ export function MachineUpadte() {
       setisSubmitted(false);
     }, 1500);
     try {
-        const result = await updateMachine(formData,params.machno);
+      setTimeout(() => {
+        const result = updateMachine(formData,params.machno);
         console.log(result);
+        navigate('/machine-list')
+      }, 1500);
+
     } catch (error) {
       console.log(error);
     }
@@ -89,9 +96,6 @@ export function MachineUpadte() {
               name="machdate"
               onChange={handleChange}
             />
-            <Form.Text className="text-muted">
-              Date in this Format: (YYYY-MM-DD)
-            </Form.Text>
           </Form.Group>
           <Form.Group className="mb-3">
             <Form.Label>Emergency Repair</Form.Label>
@@ -113,7 +117,7 @@ export function MachineUpadte() {
               onChange={handleChange}
             />
           </Form.Group>
-          <Button variant="dark" type="submit">
+          <Button variant="dark" id="btn" type="submit" >
             Update
           </Button>
           <Form.Group className="mb-3">

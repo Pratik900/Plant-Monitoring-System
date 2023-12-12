@@ -48,6 +48,7 @@ export function MachineLog() {
                   value={isSubmitted?formData.machno:null}
                   placeholder="Enter Machine id"
                   name="machno"
+                  required
                   onKeyUp={handleChange}
                 />
               </Form.Group>
@@ -58,6 +59,7 @@ export function MachineLog() {
                   value={isSubmitted?formData.machdate:null}
                   placeholder="Enter Machine name"
                   name="machdate"
+                  required
                   onKeyUp={handleChange}
                 />
                 <Form.Text className="text-muted">
@@ -71,6 +73,7 @@ export function MachineLog() {
                   type="text"
                   placeholder="Yes/No"
                   name="emergenyrepair"
+                  required
                   onKeyUp={handleChange}
                 />
               </Form.Group>
@@ -81,10 +84,11 @@ export function MachineLog() {
                   value={isSubmitted?formData.working:null}
                   placeholder="Yes/No"
                   name="working"
+                  required
                   onKeyUp={handleChange}
                 />
               </Form.Group>
-              <Button variant="dark" type="submit">
+              <Button variant="dark" id="btn" type="submit">
                 Append
               </Button>
               <Form.Group className="mb-3">
