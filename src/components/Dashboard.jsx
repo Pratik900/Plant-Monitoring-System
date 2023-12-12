@@ -38,11 +38,11 @@ export function Dashboard() {
                 <Card.Body>
                     <Card.Title>Working Machines Overview</Card.Title>
                     <Card.Text>
-                        This line graph illustrates the maintenance frequency of machines over the years. The Y-axis denotes unique machine IDs, while the X-axis represents the corresponding years when maintenance activities occurred.
+                    This bar graph provides a snapshot of the status of machines based on a binary indicator: 'Yes' signifies working machines, while 'No' indicates non-operational ones. The Y-axis represents the count of machines falling into each category, and the X-axis displays the binary status.
 
-                        Each line on the graph represents a specific machine, showcasing how often maintenance has been conducted on each machine throughout the observed period. The upward peaks indicate years with more frequent maintenance, offering a visual representation of the overall maintenance patterns.
+                    The height of the bars reveals the distribution of working and non-working machines. A higher bar for 'Yes' indicates a greater number of operational machines, while a higher bar for 'No' signifies machines requiring attention or maintenance.
 
-                        This visualization enables a quick assessment of which machines have undergone more or less maintenance over time, providing valuable insights into maintenance trends and allowing for strategic decision-making in optimizing machine performance and reliability.
+                    This visualization aids in quickly assessing the proportion of working machines within the dataset, offering valuable insights into the overall health of the machinery. It serves as a useful tool for monitoring and strategizing maintenance efforts to ensure optimal operational efficiency.
                     </Card.Text>
                 </Card.Body>
             </Card>
