@@ -8,12 +8,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Home } from './components/Home';
 import { Login } from './components/Login';
 import { About } from './components/About';
+import { Signup } from './components/Signup';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Login/>}></Route>
+        <Route path="/signup" element={<Signup/>}></Route>
         <Route path="/Home" element={<Home/>}></Route>
         <Route path="/dashboard" element={<Dashboard/>}></Route>
         <Route path="/machine-list" element={<MachineList/>}></Route>

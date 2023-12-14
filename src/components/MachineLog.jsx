@@ -23,7 +23,13 @@ export function MachineLog() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const result = await saveMachine(formData);setFormData({machno: "",machdate: "",emergenyrepair: "",working: "",})
+      const result = await saveMachine(formData);
+      setFormData({
+        machno: "",
+        machdate: "",
+        emergenyrepair: "",
+        working: "",
+      });
       setisSubmitted(true);
       setTimeout(() => {
         setisSubmitted(false);
@@ -35,8 +41,8 @@ export function MachineLog() {
   };
   return (
     <>
-    <div id="cards">
-    <NavigationBar/>
+      <div id="cards">
+        <NavigationBar />
         <Container>
           <Header text="Insert Machine Log"></Header>
           <div className="Center-Page">
@@ -45,7 +51,7 @@ export function MachineLog() {
                 <Form.Label>Machine ID</Form.Label>
                 <Form.Control
                   type="text"
-                  value={isSubmitted?formData.machno:null}
+                  value={isSubmitted ? formData.machno : null}
                   placeholder="Enter Machine id"
                   name="machno"
                   required
@@ -56,7 +62,7 @@ export function MachineLog() {
                 <Form.Label>Machine Date</Form.Label>
                 <Form.Control
                   type="text"
-                  value={isSubmitted?formData.machdate:null}
+                  value={isSubmitted ? formData.machdate : null}
                   placeholder="Enter Machine name"
                   name="machdate"
                   required
@@ -68,39 +74,50 @@ export function MachineLog() {
               </Form.Group>
               <Form.Group className="mb-3">
                 <Form.Label>Emergency Repair</Form.Label>
-                <Form.Control
-                  value={isSubmitted?formData.emergenyrepair:null}
-                  type="text"
-                  placeholder="Yes/No"
+                <Form.Select
+                  value={isSubmitted ? formData.emergenyrepair : null}
+                  onChange={handleChange}
                   name="emergenyrepair"
                   required
-                  onKeyUp={handleChange}
-                />
+                >
+                  <option value="" disabled>
+                    Select Yes/No
+                  </option>
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </Form.Select>
               </Form.Group>
               <Form.Group className="mb-3">
                 <Form.Label>Working</Form.Label>
-                <Form.Control
-                  type="text"
-                  value={isSubmitted?formData.working:null}
-                  placeholder="Yes/No"
+                <Form.Select
+                  value={isSubmitted ? formData.working : null}
+                  onChange={handleChange}
                   name="working"
                   required
-                  onKeyUp={handleChange}
-                />
+                >
+                  <option value="" disabled>
+                    Select Yes/No
+                  </option>
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </Form.Select>
               </Form.Group>
+
               <Button variant="dark" id="btn" type="submit">
                 Append
               </Button>
+
               <Form.Group className="mb-3">
-                {isSubmitted ? (<Alert variant="success">Details Inserted</Alert>) : null}
+                {isSubmitted ? (
+                  <Alert variant="success">Details Inserted</Alert>
+                ) : null}
               </Form.Group>
             </Form>
           </div>
-      </Container>
-          <Footer/>
-    </div>
-    </>
-      
+        </Container>
 
+        <Footer />
+      </div>
+    </>
   );
 }

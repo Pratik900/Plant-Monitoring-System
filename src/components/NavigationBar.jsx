@@ -29,7 +29,7 @@ export function NavigationBar() {
                             <Nav.Link>Machine Logs</Nav.Link>
                         </LinkContainer>
                     </Nav>
-                    <LinkContainer className="me-4" id="abt" to="/about">
+                    <LinkContainer className="me-4" id="abut" to="/about">
                             <Nav.Link>About</Nav.Link>
                         </LinkContainer>
                    

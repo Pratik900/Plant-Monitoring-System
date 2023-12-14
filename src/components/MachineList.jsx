@@ -6,8 +6,8 @@ import { AlertComp } from "./AlertComp";
 import { useNavigate } from "react-router-dom";
 import moment from "moment/moment";
 import { NavigationBar } from './NavigationBar';
-import { Footer } from "./Footer";
 import "../Style/MachineLog.css"
+import { FooterForList } from "./FooterForList";
 
 
 export function MachineList(){
@@ -79,9 +79,9 @@ export function MachineList(){
                     </tbody>
                 </Table>:<AlertComp text="Oh snap! Data not found..!"></AlertComp>}
                     </div>
-                    
                 </Container>
-            <Footer></Footer>
+                    <FooterForList/>
+           
             </div>
         </>
 

@@ -1,9 +1,10 @@
-import { Alert, Button, Col, Container, Form, Row } from "react-bootstrap";
+import { Alert, Button, Col, Container, Form, Nav, Row } from "react-bootstrap";
 import { login } from "../services/AdminService";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../Style/Login.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { LinkContainer } from "react-router-bootstrap";
 export function Login() {
     const navigate = useNavigate();
     const [formData, setFormData] = useState({ phone: "", password: "" });
@@ -30,7 +31,7 @@ export function Login() {
     }
     return (
         <div className="App-header">
-                <Container className="d-flex justify-content-center mt-5" id="cc">
+                <Container className="d-flex justify-content-center mt-5" id="lgn">
                 <Row>
                     <Col>
                         <Form onSubmit={handleSubmit}>
@@ -50,8 +51,10 @@ export function Login() {
                                     Login
                                 </Button>
                             </div>
+                            <LinkContainer className="me-4" id="abt" to="/signup">
+                            <Nav.Link>need account? Signup</Nav.Link>
+                        </LinkContainer>
                         </Form>
-
                         {loginError ? <Alert variant="danger"id="labeln" className="mt-5 ">Invalid Username or password</Alert> : null}
                     </Col>
                 </Row>
